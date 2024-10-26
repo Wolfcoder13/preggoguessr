@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
     try {
       const pool = await connectToDatabase();
-      const result = await pool
+      await pool
         .request()
         .input("fullName", sql.NVarChar, fullName)
         .input("sex", sql.NVarChar, sex)
