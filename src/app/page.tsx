@@ -190,7 +190,7 @@ export default function Home() {
               Baby Guessing Game
             </h1>
             <p className="text-center text-blue-500 dark:text-pink-400">
-              Submissions close on December 1st, 2024. Good luck! 🎉
+              Submissions close on November 25th, 2024. Good luck! 🎉
             </p>
 
             {/* Participant Information */}
