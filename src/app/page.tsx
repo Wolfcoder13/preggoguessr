@@ -79,13 +79,13 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-100 dark:bg-gray-900 transition duration-300">
+    <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-gray-900 transition duration-300">
       {/* Introduction Text */}
       <div className="max-w-3xl w-full p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg mb-6 space-y-5">
-        <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white mb-4">
+        <h2 className="text-3xl font-bold text-center text-pink-500 dark:text-pink-400 mb-4">
           Welcome to Our Baby Guessing Game!
         </h2>
-        <p className="text-center text-gray-700 dark:text-gray-300 mb-4">
+        <p className="text-center text-blue-500 dark:text-blue-400 mb-4">
           👶 <strong>Join us in the excitement as we await the arrival of our little bundle of joy!</strong>
         </p>
         <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -105,7 +105,7 @@ export default function Home() {
         <p className="text-gray-700 dark:text-gray-300 mb-2">
           Put on your prediction hats and submit your best guesses! You'll earn points based on how close your predictions are—the closer your guesses are to the actual results, the more points you'll receive. The person with the highest total points will win a special prize from us!
         </p>
-        <p>
+        <p className="text-gray-700 dark:text-gray-300 mb-2">
           To keep things fair, we want everybody to know the <span className="font-bold underline">due date is April 11th, 2025</span>. We can't wait to see who comes closest to the actual details when the big day arrives!
         </p>
         <p className="text-gray-700 dark:text-gray-300 mb-2">
@@ -113,25 +113,22 @@ export default function Home() {
         </p>
         <p className="text-gray-700 dark:text-gray-300">
           With love and excitement,<br />
-          <em>Andri og Pan</em>
+          <em>Andri and Pan</em>
         </p>
       </div>
       <form
         onSubmit={handleSubmit}
         className="space-y-6 max-w-3xl w-full p-6 rounded-lg bg-white dark:bg-gray-800 shadow-lg mb-10"
       >
-        <h1 className="text-2xl font-bold text-center text-gray-900 dark:text-white">
+        <h1 className="text-2xl font-bold text-center text-blue-500 dark:text-blue-400">
           Baby Guessing Game
         </h1>
-        <p className="text-center text-gray-700 dark:text-gray-300">
+        <p className="text-center text-pink-500 dark:text-pink-400">
           Submissions close on December 1st, 2024. Good luck! 🎉
         </p>
 
         {/* Participant Information */}
         <div className="space-y-4">
-          {/* <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Your Information
-          </h2> */}
           <div>
             <label
               htmlFor="fullName"
@@ -146,7 +143,7 @@ export default function Home() {
               placeholder="Enter your full name"
               value={formData.fullName}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
               required
             />
           </div>
@@ -155,8 +152,7 @@ export default function Home() {
         {/* Guess Details */}
         <div className="space-y-4">
           <div className="flex justify-center">
-
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-xl font-semibold text-pink-500 dark:text-blue-400">
               Guess Details
             </h2>
           </div>
@@ -173,7 +169,7 @@ export default function Home() {
               name="sex"
               value={formData.sex}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-blue-300 dark:border-pink-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
               required
             >
               <option value="">Select Sex</option>
@@ -196,7 +192,7 @@ export default function Home() {
               placeholder="Enter weight in grams"
               value={formData.weight}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
               required
             />
           </div>
@@ -215,7 +211,7 @@ export default function Home() {
               placeholder="Enter length in cm"
               value={formData.length}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-blue-300 dark:border-pink-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
               required
             />
           </div>
@@ -234,7 +230,7 @@ export default function Home() {
               placeholder="Date of Birth"
               value={formData.birthDate}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
               min="2024-04-11" // Sets the minimum selectable date to April 11, 2024
               required
             />
@@ -254,7 +250,7 @@ export default function Home() {
               placeholder="Time of Birth"
               value={formData.birthTime}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 dark:border-gray-700 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-blue-300 dark:border-pink-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
               required
             />
           </div>
@@ -262,7 +258,7 @@ export default function Home() {
 
         <button
           type="submit"
-          className="w-full py-2 rounded bg-blue-500 hover:bg-blue-600 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
+          className="w-full py-2 rounded bg-blue-500 hover:bg-blue-600 text-white font-bold focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400 focus:ring-opacity-50 transition duration-300"
         >
           Submit Guess
         </button>
@@ -270,11 +266,11 @@ export default function Home() {
 
       {/* Scoreboard */}
       {/* <div className="max-w-md w-full bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">Scoreboard</h2>
+        <h2 className="text-xl font-semibold text-pink-500 dark:text-blue-400 mb-4">Scoreboard</h2>
         <ul className="space-y-2">
           {guesses.map((guess) => (
-            <li key={guess.id} className="p-2 border-b border-gray-300 dark:border-gray-700">
-              <p className="text-gray-900 dark:text-white font-bold">{guess.fullName}</p>
+            <li key={guess.id} className="p-2 border-b border-gray-300 dark:border-gray-600">
+              <p className="text-gray-900 dark:text-gray-100 font-bold">{guess.fullName}</p>
               <p className="text-gray-700 dark:text-gray-300">Sex: {guess.sex}, Weight: {guess.weight}g, Length: {guess.length}cm</p>
               <p className="text-gray-700 dark:text-gray-300">Birth Date: {guess.birthDate}, Time: {guess.birthTime}</p>
             </li>
