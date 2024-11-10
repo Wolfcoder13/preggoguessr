@@ -33,7 +33,7 @@ export default function Home() {
     length: "",
   });
 
-  const [guesses, setGuesses] = useState<Guess[]>([]);
+  const [, setGuesses] = useState<Guess[]>([]);
 
   useEffect(() => {
     async function fetchGuesses() {
