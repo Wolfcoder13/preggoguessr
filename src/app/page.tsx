@@ -89,29 +89,29 @@ export default function Home() {
           <Image
             src="/photo3.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
           <Image
             src="/photo1.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
           <Image
             src="/photo4.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
           <Image
             src="/photo2.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
         </div>
@@ -336,29 +336,29 @@ export default function Home() {
           <Image
             src="/photo2.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
           <Image
             src="/photo4.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
           <Image
             src="/photo1.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
           <Image
             src="/photo3.jpg" // Replace with your image filename
             alt="Baby Image Left"
-            width={300}
-            height={500}
+            width={600}
+            height={1000}
             className="object-contain"
           />
         </div>
@@ -369,8 +369,8 @@ export default function Home() {
         <Image
           src="/photo3.jpg" // Replace with your image filename
           alt="Baby Image Left"
-          width={150}
-          height={250}
+          width={600}
+          height={1000}
           className="object-contain w-full mx-4 rounded-lg"
         />
       </div>
