@@ -365,13 +365,13 @@ export default function Home() {
       </div>
 
       {/* Bottom Images (Mobile) */}
-      <div className="flex lg:hidden w-full justify-around mt-4">
+      <div className="flex lg:hidden w-full justify-around m-4 p-4">
         <Image
           src="/photo3.jpg" // Replace with your image filename
           alt="Baby Image Left"
           width={600}
           height={1000}
-          className="object-contain w-full mx-4 rounded-lg"
+          className="object-contain w-full rounded-lg"
         />
       </div>
     </div>
