@@ -34,6 +34,9 @@ export default function Home() {
   });
 
   const [, setGuesses] = useState<Guess[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+  const [submitted, setSubmitted] = useState(false); // Added state for submission status
 
   useEffect(() => {
     async function fetchGuesses() {
@@ -53,6 +56,8 @@ export default function Home() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setLoading(true);
+    setDisabled(true);
     try {
       const response = await fetch("/api/submit-guess", {
         method: "POST",
@@ -63,19 +68,17 @@ export default function Home() {
       });
       if (response.ok) {
         alert("Guess submitted successfully!");
-        setFormData({
-          fullName: "",
-          sex: "",
-          weight: "",
-          birthDate: "2024-04-11", // Reset to April 11th, 2024
-          birthTime: "",
-          length: "",
-        });
+        setLoading(false);
+        setSubmitted(true); // Set submitted to true
       } else {
         alert("Failed to submit guess.");
+        setLoading(false);
+        setDisabled(false);
       }
     } catch (error) {
       console.error("Submission error:", error);
+      setLoading(false);
+      setDisabled(false);
     }
   };
 
@@ -85,7 +88,6 @@ export default function Home() {
       <div className="flex flex-col md:flex-row w-full max-w-6xl">
         {/* Left Image (Desktop) */}
         <div className="hidden lg:flex md:flex-col md:w-1/4 items-center justify-between p-4">
-
           <Image
             src="/photo3.jpg" // Replace with your image filename
             alt="Baby Image Left"
@@ -211,6 +213,7 @@ export default function Home() {
                   onChange={handleChange}
                   className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
                   required
+                  disabled={submitted} // Disable input if submitted
                 />
               </div>
             </div>
@@ -237,6 +240,7 @@ export default function Home() {
                   onChange={handleChange}
                   className="w-full p-2 border border-blue-300 dark:border-pink-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
                   required
+                  disabled={submitted} // Disable input if submitted
                 >
                   <option value="">Select Sex</option>
                   <option value="Male">Boy</option>
@@ -260,6 +264,7 @@ export default function Home() {
                   onChange={handleChange}
                   className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
                   required
+                  disabled={submitted} // Disable input if submitted
                 />
               </div>
 
@@ -279,6 +284,7 @@ export default function Home() {
                   onChange={handleChange}
                   className="w-full p-2 border border-blue-300 dark:border-pink-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
                   required
+                  disabled={submitted} // Disable input if submitted
                 />
               </div>
 
@@ -299,6 +305,7 @@ export default function Home() {
                   className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
                   min="2024-04-11" // Sets the minimum selectable date to April 11, 2024
                   required
+                  disabled={submitted} // Disable input if submitted
                 />
               </div>
 
@@ -318,15 +325,29 @@ export default function Home() {
                   onChange={handleChange}
                   className="w-full p-2 border border-blue-300 dark:border-pink-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400"
                   required
+                  disabled={submitted} // Disable input if submitted
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="w-full py-2 mt-6 rounded bg-blue-500 hover:bg-blue-600 dark:bg-pink-500 dark:hover:bg-pink-600 text-white font-bold focus:outline-none focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 focus:ring-opacity-50 transition duration-300"
+              disabled={disabled || submitted}
+              className={`w-full py-2 mt-6 rounded ${
+                submitted
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-blue-500 hover:bg-blue-600 dark:bg-pink-500 dark:hover:bg-pink-600"
+              } text-white font-bold focus:outline-none ${
+                submitted
+                  ? ""
+                  : "focus:ring-2 focus:ring-blue-400 dark:focus:ring-pink-400 focus:ring-opacity-50 transition duration-300"
+              }`}
             >
-              Submit Guess
+              {submitted
+                ? "Submitted Successfully"
+                : loading
+                ? "Submitting..."
+                : "Submit Guess"}
             </button>
           </form>
         </div>
@@ -335,28 +356,28 @@ export default function Home() {
         <div className="hidden lg:flex md:flex-col md:w-1/4 items-center justify-between p-4">
           <Image
             src="/photo2.jpg" // Replace with your image filename
-            alt="Baby Image Left"
+            alt="Baby Image Right"
             width={600}
             height={1000}
             className="object-contain"
           />
           <Image
             src="/photo4.jpg" // Replace with your image filename
-            alt="Baby Image Left"
+            alt="Baby Image Right"
             width={600}
             height={1000}
             className="object-contain"
           />
           <Image
             src="/photo1.jpg" // Replace with your image filename
-            alt="Baby Image Left"
+            alt="Baby Image Right"
             width={600}
             height={1000}
             className="object-contain"
           />
           <Image
             src="/photo3.jpg" // Replace with your image filename
-            alt="Baby Image Left"
+            alt="Baby Image Right"
             width={600}
             height={1000}
             className="object-contain"
@@ -368,7 +389,7 @@ export default function Home() {
       <div className="flex lg:hidden w-full justify-around m-4 p-4">
         <Image
           src="/photo3.jpg" // Replace with your image filename
-          alt="Baby Image Left"
+          alt="Baby Image Bottom"
           width={600}
           height={1000}
           className="object-contain w-full rounded-lg"
