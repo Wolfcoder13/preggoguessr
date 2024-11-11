@@ -149,12 +149,12 @@ export default function Home() {
                 The <strong>sex</strong> of our baby?
               </li>
               <li>
-                The exact <strong>date</strong> and <strong>time</strong> they'll
-                make their grand entrance?
+                The exact <strong>date</strong> and <strong>time</strong> he/she
+                makes his/her grand entrance?
               </li>
               <li>
-                How much they'll <strong>weigh</strong> and how{" "}
-                <strong>long</strong> they'll be at birth?
+                How much he/she will <strong>weigh</strong> and how{" "}
+                <strong>long</strong> he/she will be at birth?
               </li>
             </ul>
             <p className="text-gray-700 dark:text-gray-300 mb-2">
