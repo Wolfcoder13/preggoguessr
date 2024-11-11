@@ -149,8 +149,8 @@ export default function Home() {
                 The <strong>sex</strong> of our baby?
               </li>
               <li>
-                The exact <strong>date</strong> and <strong>time</strong>
-                they'll make their grand entrance?
+                The exact <strong>date</strong> and <strong>time</strong> they'll
+                make their grand entrance?
               </li>
               <li>
                 How much they'll <strong>weigh</strong> and how{" "}
@@ -303,7 +303,6 @@ export default function Home() {
                   value={formData.birthDate}
                   onChange={handleChange}
                   className="w-full p-2 border border-pink-300 dark:border-blue-500 rounded bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-pink-400 dark:focus:ring-blue-400"
-                  min="2024-04-11" // Sets the minimum selectable date to April 11, 2024
                   required
                   disabled={submitted} // Disable input if submitted
                 />
