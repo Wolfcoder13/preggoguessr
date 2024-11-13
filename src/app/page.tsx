@@ -28,7 +28,7 @@ export default function Home() {
     fullName: "",
     sex: "",
     weight: "",
-    birthDate: "2024-04-11", // Default to April 11th, 2024
+    birthDate: "2025-04-11", // Default to April 11th, 2024
     birthTime: "",
     length: "",
   });
